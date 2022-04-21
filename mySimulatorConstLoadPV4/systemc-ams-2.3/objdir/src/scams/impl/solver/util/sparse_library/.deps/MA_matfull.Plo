@@ -1,0 +1,11 @@
+MA_matfull.lo: \
+ ../../../../../../../src/scams/impl/solver/util/sparse_library/MA_matfull.c \
+ /usr/include/stdc-predef.h \
+ ../../../../../../../src/scams/impl/solver/util/sparse_library/ma_util.h \
+ ../../../../../../../src/scams/impl/solver/util/sparse_library/ma_typedef.h
+
+/usr/include/stdc-predef.h:
+
+../../../../../../../src/scams/impl/solver/util/sparse_library/ma_util.h:
+
+../../../../../../../src/scams/impl/solver/util/sparse_library/ma_typedef.h:
