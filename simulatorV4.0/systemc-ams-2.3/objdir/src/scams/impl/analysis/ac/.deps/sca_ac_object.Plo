@@ -1,8 +1,0 @@
-sca_ac_object.lo: \
- ../../../../../../src/scams/impl/analysis/ac/sca_ac_object.cpp \
- /usr/include/stdc-predef.h \
- ../../../../../../src/scams/analysis/ac/sca_ac_object.h
-
-/usr/include/stdc-predef.h:
-
-../../../../../../src/scams/analysis/ac/sca_ac_object.h:
