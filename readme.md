@@ -1,15 +1,15 @@
-#IoT SYSTEM SIMULATOR
+IoT SYSTEM SIMULATOR
 
 ## Features
 
 The current version of the simulator provides:
- 1) a photovoltaic module;
- 2) inefficiency factors for all converters;
- 3) self-discharge factor for the battery;
- 4) possibility to switch between a system with a single constant load and a more realistic system with MCU, RF, SENSOR1, SENSOR2, PV;
- 5) possibility to set the Pidle of any device to a value greater than 0;
- 6) possibility to change the schedule of the activation of the sensors (sequential or parallel);
- 7) estimated Ps, with mock measures taken from an input file.
+ 1) a photovoltaic module; <br />
+ 2) inefficiency factors for all converters; <br />
+ 3) self-discharge factor for the battery; <br />
+ 4) possibility to switch between a system with a single constant load and a more realistic system with MCU, RF, SENSOR1, SENSOR2, PV; <br />
+ 5) possibility to set the Pidle of any device to a value greater than 0; <br />
+ 6) possibility to change the schedule of the activation of the sensors (sequential or parallel); <br />
+ 7) estimated Ps, with mock measures taken from an input file. <br />
 
 ## Usage Info
 
@@ -20,10 +20,10 @@ The behavior of the simulator changes according to the presence of the definitio
 Denoting with '1' the presence of the definition, with '0' its absence and with 'X' its uninfluence:
 
 ALL_SENSORS    PARALLEL    DETERMINISTIC_LOAD    |    BEHAVIOR
-    0             X                  0          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is a random one among those defined in config.h, for each frame
-    0             X                  1          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is set to LOAD_Tdefault by default
-    1	          0                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in sequence
-    1             1                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in parallel
+    0             X                  0          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is a random one among those defined in config.h, for each frame <br />
+    0             X                  1          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is set to LOAD_Tdefault by default <br />
+    1	            0                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in sequence <br />
+    1             1                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in parallel <br />
 
 The output of the simulation will be in the /work folder. In order to have vectors that can be plotted on Matlab, you can run the command in the /work folder:
   python ./read_trace.py  (or python3).
