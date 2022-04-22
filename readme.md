@@ -19,11 +19,11 @@ Here, you can find 3 user-manageable parameters: {ALL_SENSORS, PARALLEL, DETERMI
 The behavior of the simulator changes according to the presence of the definition of the parameters forementioned.
 Denoting with '1' the presence of the definition, with '0' its absence and with 'X' its uninfluence:
 
-ALL_SENSORS    PARALLEL    DETERMINISTIC_LOAD    |    BEHAVIOR <br />
-    0             X                  0          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is a random one among those defined in config.h, for each frame <br />
-    0             X                  1          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is set to LOAD_Tdefault by default <br />
-    1	            0                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in sequence <br />
-    1             1                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in parallel <br />
+ALL_SENSORS,    PARALLEL,    DETERMINISTIC_LOAD    |    BEHAVIOR <br />
+    0,             X,                  0          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is a random one among those defined in config.h, for each frame <br />
+    0,             X,                  1          ==>  system has SENSOR1, PV, battery and the duty cycle of SENSOR1 is set to LOAD_Tdefault by default <br />
+    1,	            0,                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in sequence <br />
+    1,             1,                  X          ==>  system has SENSOR1, SENSOR2, MCU, RF, PV, battery and the two sensors are activated in parallel <br />
 
 The output of the simulation will be in the /work folder. In order to have vectors that can be plotted on Matlab, you can run the command in the /work folder:
   python ./read_trace.py  (or python3).
