@@ -1,0 +1,20 @@
+
+include $(top_srcdir)/config/Make-rules
+
+SUBDIRS = \
+	linear \
+	tdf \
+	user_solver \
+	util
+
+INCLUDE_DIR = $(prefix)/include/scams/impl/solver
+
+install-data-local:
+	@$(NORMAL_INSTALL)
+	$(mkinstalldirs) $(DESTDIR)$(INCLUDE_DIR)
+
+uninstall-local:
+	@$(NORMAL_UNINSTALL)
+	-rmdir $(DESTDIR)$(INCLUDE_DIR)
+
+## Taf!
