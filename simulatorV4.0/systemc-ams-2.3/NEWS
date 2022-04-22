@@ -1,0 +1,47 @@
+SystemC-AMS NEWS -- history of user visible changes
+
+SystemC-AMS version 2.3
+    *SystemC 2.3.3 compatibility
+    *Several memory leaks fixed
+    *Several bugs fixed
+    *Recursive algorithm for eln equation setup removed
+        ->size limit due stack overflow removed
+    *Performance optimizations
+        -TDF buffer access
+        -equation system re-initializations
+    *Feature preview for standard update
+        -generalized AC
+        -piece wise linear (PWL) for eln and lsf
+        -physical units
+        -solver parameter
+            -algorithm : euler/default
+            -reinitialization_steps : <number> (default: 1)
+        -interactive debug feature 
+        -implementation of dump/print methods
+    *Tabular tracing for sca_complex
+
+
+SystemC-AMS version 2.1
+    *Release
+    *IEEE P1666.1 compliant
+    *Bug fixes
+    *some preview feature
+
+SystemC-AMS version 2.0Beta1
+    * All SystemC-AMS 2.0 feature implemented
+    * Bug fixes
+    
+SystemC-AMS version 2.0Alpha2
+
+    * first version with part of SystemC--AMS 2.0 feature 
+    * Bugfixes
+
+SystemC-AMS version 1.0Beta2
+
+	* bug fixes
+	* improved error messages
+	* Microsoft Visual support 
+
+SystemC-AMS version 2.0 Alpha1
+    * first implementation with most of the 2.0 feature
+    * not for productive usage
