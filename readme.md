@@ -36,4 +36,4 @@ Updated on 22/04/2022.
 
 ## Notes
 
-P.S. the file /work/run.sh is a bash script that compiles the program, runs the simulation, parses the output to Matlab vectors but it is tuned to MY machine. You can comment the last line to use it.
+The file /work/run.sh is a bash script that compiles the program, runs the simulation, parses the output to Matlab vectors but it is tuned to MY machine. You can comment the last line to use it.
