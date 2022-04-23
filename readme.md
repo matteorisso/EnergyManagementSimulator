@@ -1,4 +1,4 @@
-# IoT SYSTEM SIMULATOR
+# IoT System Simulator
 
 ## Features
 
