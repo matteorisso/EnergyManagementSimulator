@@ -1,5 +1,5 @@
-//#define ALL_SENSORS
-//#define PARALLEL
+#define ALL_SENSORS
+#define PARALLEL
 #define DETERMINISTIC_LOAD
 
 #define SIM_STEP 1

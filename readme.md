@@ -28,6 +28,8 @@ ALL_SENSORS,    PARALLEL,    DETERMINISTIC_LOAD    |    BEHAVIOR <br />
 The output of the simulation will be in the /work folder. In order to have vectors that can be plotted on Matlab, you can run the command in the /work folder:
   python ./read_trace.py  (or python3).
 
+You can plot the output traces on Matlab by inserting in the same folder the newly generated file "traces.m" and the Matlab script "main_Script.m", provided in this repo. You just have to run the script. 
+
 ## Latest Update
 
 Updated on 22/04/2022.
