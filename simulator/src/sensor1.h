@@ -16,9 +16,4 @@ SCA_TDF_MODULE(sensor1){
 
 	void processing();
 
-	#ifndef ALL_SENSORS			// only needed if you want to use this module as a "generic load" 
-	    private: 
-		int CURRENT_DUTY_CYCLE, randomPicker;
-        #endif
-
 };

@@ -30,6 +30,12 @@ for sensor in sensorsList:
         sensor_activation_time = "#define " + sensorname + "_" + "ACT_TIME " + sensor["activation_time"]
         sensor_on_time = "#define " + sensorname + "_" + "ON_TIME " + sensor["time_on"]
         configFile.write(f"// params for sensor {sensorname}" "\n" + sensor_on_power + "\n" + sensor_on_time + "\n" + sensor_off_power + "\n" + sensor_activation_time + "\n\n")
+    else:
+        sensor_on_power = "#define " + sensorname + "_" + "ON 0"
+        sensor_off_power = "#define " + sensorname + "_" + "IDLE 0"
+        sensor_activation_time = "#define " + sensorname + "_" + "ACT_TIME 0"
+        sensor_on_time = "#define " + sensorname + "_" + "ON_TIME 0"
+        configFile.write(f"// params for sensor {sensorname}" "\n" + sensor_on_power + "\n" + sensor_on_time + "\n" + sensor_off_power + "\n" + sensor_activation_time + "\n\n")
 
 mcu = f['mcu']
 if mcu["inserted"] == "true":

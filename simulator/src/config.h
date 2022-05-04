@@ -20,10 +20,22 @@
 #define S1_ACT_TIME 0
 
 // params for sensor S2
-#define S2_ON 1
-#define S2_ON_TIME 35
-#define S2_IDLE 0.01
+#define S2_ON 0
+#define S2_ON_TIME 0
+#define S2_IDLE 0
 #define S2_ACT_TIME 0
+
+// params for sensor S3
+#define S3_ON 0
+#define S3_ON_TIME 0
+#define S3_IDLE 0
+#define S3_ACT_TIME 0
+
+// params for sensor S4
+#define S4_ON 0
+#define S4_ON_TIME 0
+#define S4_IDLE 0
+#define S4_ACT_TIME 0
 
 // params for mcu
 #define MCU_P1 2.2

@@ -15,7 +15,7 @@
     },
     {
         "name": "S2",
-        "inserted": "true",
+        "inserted": "false",
         "power_on": "1",
         "power_off": "0.01",
         "activation_time": "0",
@@ -97,5 +97,5 @@
     "inserted" : "false"
     }
 ],
-"plotAllSensors": "false"
+"plotAllSensors": "true"
 }
