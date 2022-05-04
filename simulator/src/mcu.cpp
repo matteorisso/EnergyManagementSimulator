@@ -16,7 +16,6 @@ void mcu::processing(){
 	
 	tmpsoc = SOC.read();
 
-        #ifdef ALL_SENSORS
 	if(tmpsoc>0.5){							// @todo: rendilo parametrizzabile 
 		if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_T1){
 		P.write(MCU_P1);
@@ -34,6 +33,5 @@ void mcu::processing(){
 		i = (i+1) % PERIOD;
 		}
 	}
-        #endif
-
+	
 }

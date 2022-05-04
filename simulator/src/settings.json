@@ -1,0 +1,101 @@
+{
+"sim_step" : 1,
+"vref_cti" : 3.5,
+"soc_init" : 0.8,
+"selfdisch_factor" : 0.00001,
+"period" : 100, 
+"sensors" : [
+    {
+        "name": "S1",
+        "inserted": "true",
+        "power_on": "1",
+        "power_off": "0.01",
+        "activation_time": "0",
+        "time_on": "15"
+    },
+    {
+        "name": "S2",
+        "inserted": "true",
+        "power_on": "1",
+        "power_off": "0.01",
+        "activation_time": "0",
+        "time_on": "35"
+    },
+    {
+        "name": "S3",
+        "inserted": "false",
+        "power_on": "1",
+        "power_off": "0.01",
+        "activation_time": "0",
+        "time_on": "20"
+    },
+    {
+        "name": "S4",
+        "inserted": "false",
+        "power_on": "1",
+        "power_off": "0.01",
+        "activation_time": "10",
+        "time_on": "20"
+    }
+],
+"mcu" : {
+    "inserted": "true",
+    "mcu_p1": "2.2",
+    "mcu_p2": "1.4",
+    "mcu_t1": "40",
+    "mcu_t2": "30",
+    "mcu_idle": "0.01"
+},
+"rf" : {
+    "inserted": "true",
+    "rf_p1": "2",
+    "rf_p2": "1.2",
+    "rf_t1": "10",
+    "rf_t2": "20",
+    "rf_idle": "0.01"
+},
+"outputFile" : "trace.dat",
+"plottedSignals": [
+    {
+    "name" : "SOC",
+    "inserted" : "true"
+    },
+    {
+    "name" : "Ibatt", 
+    "inserted" : "false"
+    },
+    {
+    "name" : "Vbatt",
+    "inserted" : "false"
+    },
+    {
+    "name" : "Ptotal",
+    "inserted" : "true"
+    },
+    {
+    "name" : "Pmcu",
+    "inserted" : "false"
+    },
+    {
+    "name" : "Imcu",
+    "inserted" : "false"
+    },
+    {
+    "name" : "Prf",
+    "inserted" : "false"
+    },
+    {
+    "name" : "Irf",
+    "inserted" : "false"
+    },
+    {
+    "name" : "Ppv",
+    "inserted" : "true"
+    },
+    {
+    "name" : "Ipv",
+    "inserted" : "false"
+    }
+],
+"plotAllSensors": "false"
+}

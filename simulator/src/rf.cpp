@@ -15,7 +15,7 @@ void rf::processing(){
 
 	tmpsoc = SOC.read();
 
-        #ifdef ALL_SENSORS
+
 	if(tmpsoc>0.5){							// @todo: rendilo parametrizzabile
 	      if(i >= RF_ACT_TIME1 && i < RF_ACT_TIME1 + RF_T1){
 	          P.write(RF_P1);
@@ -33,6 +33,5 @@ void rf::processing(){
 	          i = (i+1) % PERIOD;
 	      }
 	    }
-        #endif
 
 }
