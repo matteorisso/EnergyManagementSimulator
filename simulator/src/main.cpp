@@ -13,11 +13,21 @@
 #include "sensor1.h"
 #include "converter1.h"
 
+// sensor S2
+#include "sensor2.h"
+#include "converter2.h"
+
+// sensor S3
+#include "sensor3.h"
+#include "converter3.h"
+
 int sc_main(int argc, char* argv[])
 {
 
     sca_tdf::sca_signal<double> Ibatt, Vbatt, SOC;
     sca_tdf::sca_signal<double> Psensor1, Isensor1;
+    sca_tdf::sca_signal<double> Psensor2, Isensor2;
+    sca_tdf::sca_signal<double> Psensor3, Isensor3;
     sca_tdf::sca_signal<double> Pmcu, Imcu;
     sca_tdf::sca_signal<double> Prf, Irf;
     sca_tdf::sca_signal<double> Ptotal, Itotal, Ppv, Ipv;
@@ -29,6 +39,10 @@ int sc_main(int argc, char* argv[])
     converter converter("converter");
     sensor1 sensor1("sensor1");
     converter1 converter1("converter1");
+    sensor2 sensor2("sensor2");
+    converter2 converter2("converter2");
+    sensor3 sensor3("sensor3");
+    converter3 converter3("converter3");
     mcu mcu("mcu");
     converter_mcu converter_mcu("converter_mcu");
     rf rf("rf");
@@ -47,6 +61,12 @@ int sc_main(int argc, char* argv[])
     sensor1.P(Psensor1);
     converter1.in(Psensor1);
     converter1.out(Isensor1);
+    sensor2.P(Psensor2);
+    converter2.in(Psensor2);
+    converter2.out(Isensor2);
+    sensor3.P(Psensor3);
+    converter3.in(Psensor3);
+    converter3.out(Isensor3);
     mcu.P(Pmcu);
     mcu.SOC(SOC);
     converter_mcu.in(Pmcu);
@@ -60,6 +80,8 @@ int sc_main(int argc, char* argv[])
     cti_bus.Ipv(Ipv);
     cti_bus.Ptotal(Ptotal);
     cti_bus.Isensor1(Isensor1);
+    cti_bus.Isensor2(Isensor2);
+    cti_bus.Isensor3(Isensor3);
 
     sca_util::sca_trace_file* atf = sca_util::sca_create_tabular_trace_file("trace.dat");
 
@@ -68,6 +90,10 @@ int sc_main(int argc, char* argv[])
     sca_util::sca_trace( atf, Ppv, "Ppv" );
     sca_util::sca_trace( atf, Isensor1, "Isensor1" );
     sca_util::sca_trace( atf, Psensor1, "Psensor1" );
+    sca_util::sca_trace( atf, Isensor2, "Isensor2" );
+    sca_util::sca_trace( atf, Psensor2, "Psensor2" );
+    sca_util::sca_trace( atf, Isensor3, "Isensor3" );
+    sca_util::sca_trace( atf, Psensor3, "Psensor3" );
 
     cout<<"The simulation starts!"<<endl;
 

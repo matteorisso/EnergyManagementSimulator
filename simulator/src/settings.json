@@ -15,7 +15,7 @@
     },
     {
         "name": "S2",
-        "inserted": "false",
+        "inserted": "true",
         "power_on": "1",
         "power_off": "0.01",
         "activation_time": "0",
@@ -23,7 +23,7 @@
     },
     {
         "name": "S3",
-        "inserted": "false",
+        "inserted": "true",
         "power_on": "1",
         "power_off": "0.01",
         "activation_time": "0",
