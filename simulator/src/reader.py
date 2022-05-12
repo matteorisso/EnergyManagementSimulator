@@ -219,6 +219,7 @@ for sensor in sensorsList:
         module = f'SCA_TDF_MODULE(sensor{sensornumber}) {{\n\nsca_tdf::sca_out<double> P;\nint i;\n\nSCA_CTOR(sensor{sensornumber}): P("P"), i(0){{}}\n\nvoid set_attributes();\n\nvoid initialize();\n\nvoid processing();\n\n}};\n\n'
         sensorFile.write(libs + module)
         sensorFile.close()
+        
         sensorFile = open("sensor" + sensornumber + ".cpp", "w")
         lib = '#include "sensor' + sensornumber + '.h"\n\n'
         setattributes= 'void sensor' + sensornumber + '::set_attributes(){\n P.set_timestep(SIM_STEP, sc_core::SC_SEC);\n}\n\n'
@@ -226,3 +227,18 @@ for sensor in sensorsList:
         processing = 'void sensor' + sensornumber + '::processing(){\n\n'
         processingBody = 'if(i >= S' + sensornumber + '_ACT_TIME && i< S' + sensornumber +'_ACT_TIME + S' + sensornumber + '_ON_TIME){\n  P.write(S' + sensornumber + '_ON);\n  i = (i+1) % PERIOD;\n}else{\n  P.write(S' + sensornumber + '_IDLE);\n  i = (i+1) % PERIOD;\n}\n\n}\n\n'
         sensorFile.write(lib + setattributes + initialize + processing + processingBody)
+        sensorFile.close()
+
+        sensorFile = open("converter" + sensornumber + ".h", "w")
+        lib = '#include "systemc-ams.h"\n#include "config.h"\n\n'
+        module = f'SCA_TDF_MODULE(converter{sensornumber}) {{\n\nsca_tdf::sca_in<double> in;\nsca_tdf::sca_out<double> out;\n\nSCA_CTOR(converter{sensornumber}){{}}\n\nvoid set_attributes();\n\nvoid initialize();\n\nvoid processing();\n\n}};\n\n'
+        sensorFile.write(lib + module)
+        sensorFile.close()
+
+        sensorFile = open("converter" + sensornumber + ".cpp", "w")
+        lib = '#include "converter' + sensornumber + '.h"\n\n'
+        setattributes = 'void converter' + sensornumber + '::set_attributes(){\n out.set_timestep(SIM_STEP, sc_core::SC_SEC);\n}\n\n'
+        initialize = 'void converter' + sensornumber + '::initialize(){\n\n}\n\n'
+        processingHead = 'void converter' + sensornumber + '::processing(){\n\n'
+        processingBody = '  double tmp_power = in.read();\n  double tmp_vout = VREF_CTI;\n\n  double efficiency = 1;\n\n  out.write(tmp_power*efficiency/tmp_vout);\n\n}\n\n'
+        sensorFile.write(lib + setattributes + initialize + processingHead + processingBody)

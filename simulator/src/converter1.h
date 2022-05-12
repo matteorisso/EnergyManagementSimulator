@@ -1,16 +1,18 @@
 #include "systemc-ams.h"
 #include "config.h"
 
-SCA_TDF_MODULE(converter1){
-	sca_tdf::sca_in<double> in; // Powerin
-	sca_tdf::sca_out<double> out;//Iout
+SCA_TDF_MODULE(converter1) {
 
-	SCA_CTOR(converter1){}
+sca_tdf::sca_in<double> in;
+sca_tdf::sca_out<double> out;
 
-	void set_attributes();
+SCA_CTOR(converter1){}
 
-	void initialize();
+void set_attributes();
 
-	// Processes to calculate converter efficiency and current
-	void processing();
+void initialize();
+
+void processing();
+
 };
+
