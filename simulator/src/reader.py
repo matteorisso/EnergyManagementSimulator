@@ -208,4 +208,21 @@ ctih.write('\nvoid set_attributes();\n\nvoid initialize();\n\nvoid processing();
 ctih.close()
 
 
-### altri file non sembra vadano toccati ###
+### creation of all .cpp and .h files for sensors ###
+
+for sensor in sensorsList:
+    if sensor["inserted"] == "true":
+        sensorname = sensor["name"]
+        sensornumber = sensorname[1:]
+        sensorFile = open("sensor" + sensornumber + ".h", "w")
+        libs = '#include "systemc-ams.h"\n#include "config.h"\n#include <stdlib.h>\n#include <time.h>\n\n'
+        module = f'SCA_TDF_MODULE(sensor{sensornumber}) {{\n\nsca_tdf::sca_out<double> P;\nint i;\n\nSCA_CTOR(sensor{sensornumber}): P("P"), i(0){{}}\n\nvoid set_attributes();\n\nvoid initialize();\n\nvoid processing();\n\n}};\n\n'
+        sensorFile.write(libs + module)
+        sensorFile.close()
+        sensorFile = open("sensor" + sensornumber + ".cpp", "w")
+        lib = '#include "sensor' + sensornumber + '.h"\n\n'
+        setattributes= 'void sensor' + sensornumber + '::set_attributes(){\n P.set_timestep(SIM_STEP, sc_core::SC_SEC);\n}\n\n'
+        initialize = 'void sensor' + sensornumber + '::initialize(){\n\n}\n\n'
+        processing = 'void sensor' + sensornumber + '::processing(){\n\n'
+        processingBody = 'if(i >= S' + sensornumber + '_ACT_TIME && i< S' + sensornumber +'_ACT_TIME + S' + sensornumber + '_ON_TIME){\n  P.write(S' + sensornumber + '_ON);\n  i = (i+1) % PERIOD;\n}else{\n  P.write(S' + sensornumber + '_IDLE);\n  i = (i+1) % PERIOD;\n}\n\n}\n\n'
+        sensorFile.write(lib + setattributes + initialize + processing + processingBody)

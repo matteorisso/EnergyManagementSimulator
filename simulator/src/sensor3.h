@@ -3,12 +3,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-SCA_TDF_MODULE(sensor2) {
+SCA_TDF_MODULE(sensor3) {
 
 sca_tdf::sca_out<double> P;
 int i;
 
-SCA_CTOR(sensor2): P("P"), i(0){}
+SCA_CTOR(sensor3): P("P"), i(0){}
 
 void set_attributes();
 

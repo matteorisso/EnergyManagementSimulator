@@ -10,12 +10,13 @@ void sensor2::initialize(){
 
 void sensor2::processing(){
 
-      if(i >= S2_ACT_TIME && i< S2_ACT_TIME + S2_ON_TIME){
-     P.write(S2_ON);
-     i = (i+1) % PERIOD;
-   }else {
-     P.write(S2_IDLE);
-     i = (i+1) % PERIOD;
-   }
+if(i >= S2_ACT_TIME && i< S2_ACT_TIME + S2_ON_TIME){
+  P.write(S2_ON);
+  i = (i+1) % PERIOD;
+}else{
+  P.write(S2_IDLE);
+  i = (i+1) % PERIOD;
+}
 
 }
+

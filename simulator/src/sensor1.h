@@ -3,17 +3,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-SCA_TDF_MODULE(sensor1){
-	sca_tdf::sca_out<double> P; // Pactive Pidle
+SCA_TDF_MODULE(sensor1) {
 
-	int i;
-	
-	SCA_CTOR(sensor1):P("P"),i(0) {}
+sca_tdf::sca_out<double> P;
+int i;
 
-	void set_attributes();
-	
-	void initialize();
+SCA_CTOR(sensor1): P("P"), i(0){}
 
-	void processing();
+void set_attributes();
+
+void initialize();
+
+void processing();
 
 };
+
