@@ -242,3 +242,4 @@ for sensor in sensorsList:
         processingHead = 'void converter' + sensornumber + '::processing(){\n\n'
         processingBody = '  double tmp_power = in.read();\n  double tmp_vout = VREF_CTI;\n\n  double efficiency = 1;\n\n  out.write(tmp_power*efficiency/tmp_vout);\n\n}\n\n'
         sensorFile.write(lib + setattributes + initialize + processingHead + processingBody)
+        sensorFile.close()
