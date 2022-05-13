@@ -1,0 +1,20 @@
+// simulation step
+#define SIM_STEP {{sim_step}}
+
+// voltage bus
+#define VREF_CTI {{vref_cti}}
+
+// initial state of charge battery
+#define SOC_INIT {{soc_init}}
+
+// self discharge factor
+#define SELFDISCH_FACTOR {{selfdisch_factor}}
+
+// period
+#define PERIOD {{period}}
+
+// params for mcu
+
+// params for rf
+
+// params for sensors

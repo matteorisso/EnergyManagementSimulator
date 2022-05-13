@@ -4,7 +4,7 @@ cd simulator
 
 cd src
 
-python3 ./reader.py
+python3 ./readpattern.py
 
 cd ..
 
@@ -16,4 +16,4 @@ make
 
 python3 ./read_trace.py
 
-sudo cp ./traces.m /home/anto/Desktop/shared
+#sudo cp ./traces.m /home/anto/Desktop/shared

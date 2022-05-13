@@ -1,14 +1,14 @@
-#include "converter3.h"
+#include "converter{{sensorID}}.h"
 
-void converter3::set_attributes(){
+void converter{{sensorID}}::set_attributes(){
  out.set_timestep(SIM_STEP, sc_core::SC_SEC);
 }
 
-void converter3::initialize(){
+void converter{{sensorID}}3::initialize(){
 
 }
 
-void converter3::processing(){
+void converter{{sensorID}}::processing(){
 
   double tmp_power = in.read();
   double tmp_vout = VREF_CTI;
