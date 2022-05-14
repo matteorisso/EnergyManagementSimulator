@@ -150,6 +150,21 @@ with open('./templates/templateCtiCpp.txt') as templateCTICpp:
         ctiCpp.close()
 templateCTICpp.close()
 
+
+### Makefile ###
+
+with open('./templates/Makefile/templateMakefile.txt') as templateMakefile:
+    template = Template(templateMakefile.read())
+    with open("Makefile", "w") as makefile:
+        activeSensors = settings["sensors"]
+        sensorNames = []
+        sensorID = 0
+        for sensor in activeSensors:
+            sensorID += 1
+            sensorNames.append(sensorID)  
+        makefile.write(template.render(activeSensors = sensorNames))
+        makefile.close()
+
 ### MakeFile dependencies ###
 
 #templateMF = open('./templates/MakefileDeps/templateBaseMakefile.txt')

@@ -4,7 +4,7 @@ void converter1::set_attributes(){
  out.set_timestep(SIM_STEP, sc_core::SC_SEC);
 }
 
-void converter13::initialize(){
+void converter1::initialize(){
 
 }
 
