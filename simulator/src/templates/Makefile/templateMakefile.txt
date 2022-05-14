@@ -18,9 +18,8 @@ SRCS =  ../src/battery_voc.cpp ../src/battery.cpp\
 	../src/mcu.cpp ../src/rf.cpp \
 	../src/cti.cpp \
 	../src/converter.cpp \{% for sensorID in activeSensors %}
-    ../src/converter{{sensorID}}.cpp \{% endfor %} 
-	../src/converter_mcu.cpp ../src/converter_rf.cpp \
-    ../src/converter_pv.cpp \
+    ../src/converter{{sensorID}}.cpp {% endfor %} \
+	../src/converter_mcu.cpp ../src/converter_rf.cpp ../src/converter_pv.cpp \
 	../src/main.cpp
 
 OBJS = $(SRCS:../src/%.cpp=%.o)
