@@ -16,10 +16,11 @@ SRCS =  ../src/battery_voc.cpp ../src/battery.cpp\
     ../src/sensor1.cpp \
     ../src/sensor2.cpp \
     ../src/sensor3.cpp \
+    ../src/sensor4.cpp \
     ../src/pv_panel.cpp \
 	../src/mcu.cpp ../src/rf.cpp \
 	../src/cti.cpp \
-	../src/converter.cpp ../src/converter1.cpp ../src/converter2.cpp ../src/converter3.cpp  \
+	../src/converter.cpp ../src/converter1.cpp ../src/converter2.cpp ../src/converter3.cpp ../src/converter4.cpp  \
 	../src/converter_mcu.cpp ../src/converter_rf.cpp ../src/converter_pv.cpp \
 	../src/main.cpp
 

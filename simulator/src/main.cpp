@@ -23,6 +23,10 @@
 #include "sensor3.h"
 #include "converter3.h"
 
+// sensor 4
+#include "sensor4.h"
+#include "converter4.h"
+
 
 int sc_main(int argc, char* argv[])
 {
@@ -32,6 +36,7 @@ int sc_main(int argc, char* argv[])
     sca_tdf::sca_signal<double> Psensor1,Isensor1; 
     sca_tdf::sca_signal<double> Psensor2,Isensor2; 
     sca_tdf::sca_signal<double> Psensor3,Isensor3; 
+    sca_tdf::sca_signal<double> Psensor4,Isensor4; 
     sca_tdf::sca_signal<double> Pmcu, Imcu;
     sca_tdf::sca_signal<double> Prf, Irf;
     sca_tdf::sca_signal<double> Ptotal, Itotal, Ppv, Ipv;
@@ -49,6 +54,8 @@ int sc_main(int argc, char* argv[])
     converter2 converter2("converter2"); 
     sensor3 sensor3("sensor3"); 
     converter3 converter3("converter3"); 
+    sensor4 sensor4("sensor4"); 
+    converter4 converter4("converter4"); 
     mcu mcu("mcu");
     converter_mcu converter_mcu("converter_mcu");
     rf rf("rf");
@@ -84,6 +91,11 @@ int sc_main(int argc, char* argv[])
     converter3.in(Psensor3);
     converter3.out(Isensor3);
     
+    sensor4.P(Psensor4);
+
+    converter4.in(Psensor4);
+    converter4.out(Isensor4);
+    
     mcu.P(Pmcu);
     mcu.SOC(SOC);
     
@@ -103,6 +115,7 @@ int sc_main(int argc, char* argv[])
     cti_bus.Isensor1(Isensor1);
     cti_bus.Isensor2(Isensor2);
     cti_bus.Isensor3(Isensor3);
+    cti_bus.Isensor4(Isensor4);
 
     // define simulation file
     sca_util::sca_trace_file* atf = sca_util::sca_create_tabular_trace_file("trace.dat");
@@ -119,6 +132,8 @@ int sc_main(int argc, char* argv[])
     sca_util::sca_trace( atf, Isensor2, "Isensor2" );
     sca_util::sca_trace( atf, Psensor3, "Psensor3" );
     sca_util::sca_trace( atf, Isensor3, "Isensor3" );
+    sca_util::sca_trace( atf, Psensor4, "Psensor4" );
+    sca_util::sca_trace( atf, Isensor4, "Isensor4" );
 
     cout<<"The simulation starts!"<<endl;
 

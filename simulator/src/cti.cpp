@@ -8,7 +8,7 @@ void cti::initialize(){}
 void cti::processing(){
 
 //Compute the total power consumption
-double totalConsumed = VREF_CTI*(Imcu.read() +  Isensor1.read() +  Isensor2.read() +  Isensor3.read() + Irf.read());
+double totalConsumed = VREF_CTI*(Imcu.read() +  Isensor1.read() +  Isensor2.read() +  Isensor3.read() +  Isensor4.read() + Irf.read());
 
 double totalScavengered = VREF_CTI*(Ipv.read());
 

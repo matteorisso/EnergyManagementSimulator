@@ -23,6 +23,12 @@
 #define sensor3_IDLE 0.01
 #define sensor3_ACT_TIME 12
 
+// params for sensor sensor4
+#define sensor4_ON 1
+#define sensor4_ON_TIME 3
+#define sensor4_IDLE 0.01
+#define sensor4_ACT_TIME 12
+
 // params for MCU
 #define MCU_P1 2.2
 #define MCU_P2 1.4
