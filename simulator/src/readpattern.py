@@ -120,6 +120,35 @@ with open('./templates/templateMainCpp.txt') as templateMainCpp:
             sensorNames.append(sensorID) 
         mainCpp.write(template.render(activeSensors=sensorNames))
 
+### cti.h ###
+
+with open('./templates/templateCtiH.txt') as templateCTIH:
+    template = Template(templateCTIH.read())
+    with open("cti.h", "w") as ctiH:
+        activeSensors = settings["sensors"]
+        sensorNames = []
+        sensorID = 0
+        for sensor in activeSensors:
+            sensorID += 1
+            sensorNames.append(sensorID)         
+        ctiH.write(template.render(activeSensors = sensorNames))
+        ctiH.close()
+templateCTIH.close()
+
+### cti.cpp ###
+
+with open('./templates/templateCtiCpp.txt') as templateCTICpp:
+    template = Template(templateCTICpp.read())
+    with open("cti.cpp", "w") as ctiCpp:
+        activeSensors = settings["sensors"]
+        sensorNames = []
+        sensorID = 0
+        for sensor in activeSensors:
+            sensorID += 1
+            sensorNames.append(sensorID)         
+        ctiCpp.write(template.render(activeSensors = sensorNames))
+        ctiCpp.close()
+templateCTICpp.close()
 
 ### MakeFile dependencies ###
 

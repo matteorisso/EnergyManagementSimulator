@@ -17,19 +17,13 @@
 #define sensor2_IDLE 0.01
 #define sensor2_ACT_TIME 12
 
-// params for sensor sensor3
-#define sensor3_ON 1
-#define sensor3_ON_TIME 30
-#define sensor3_IDLE 0.01
-#define sensor3_ACT_TIME 11
-
 // params for MCU
 #define MCU_P1 2.2
 #define MCU_P2 1.4
 #define MCU_T1 40
 #define MCU_T2 30
 #define MCU_IDLE 0.01
-#define MCU_ACT_TIME 42
+#define MCU_ACT_TIME 26
 
 // params for RF
 #define RF_P1 2
@@ -37,5 +31,5 @@
 #define RF_T1 10
 #define RF_T2 20
 #define RF_IDLE 0.01
-#define RF_ACT_TIME1 83
-#define RF_ACT_TIME2 73
+#define RF_ACT_TIME1 67
+#define RF_ACT_TIME2 57
