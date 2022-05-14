@@ -454,6 +454,5 @@ main.o: ../src/main.cpp /usr/include/stdc-predef.h \
  ../src/rf.h \
  ../src/converter_rf.h \
  ../src/pv_panel.h \
- ../src/converter_pv.h \ {% for sensorID in activeSensors %}
- ../src/sensor{{sensorID}}.h \
- ../src/converter{{sensorID}}.h \{% endfor %}
+ ../src/converter_pv.h \ 
+ {% for sensorID in activeSensors %}../src/sensor{{sensorID}}.h ../src/converter{{sensorID}}.h {% endfor %}
