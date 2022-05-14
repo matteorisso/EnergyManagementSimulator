@@ -14,7 +14,7 @@ MODULE = run
 SRCS =  ../src/battery_voc.cpp ../src/battery.cpp\
 	../src/battery_char.cpp ../src/battery_fre.cpp \{% for sensorID in activeSensors %}
     ../src/sensor{{sensorID}}.cpp \{% endfor %}
-    ../src/pv_panel.cpp\
+    ../src/pv_panel.cpp \
 	../src/mcu.cpp ../src/rf.cpp \
 	../src/cti.cpp \
 	../src/converter.cpp \{% for sensorID in activeSensors %}
