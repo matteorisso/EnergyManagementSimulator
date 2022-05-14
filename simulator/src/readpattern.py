@@ -155,7 +155,7 @@ templateCTICpp.close()
 
 with open('./templates/Makefile/templateMakefile.txt') as templateMakefile:
     template = Template(templateMakefile.read())
-    with open("Makefile", "w") as makefile:
+    with open("../work/Makefile", "w") as makefile:
         activeSensors = settings["sensors"]
         sensorNames = []
         sensorID = 0
@@ -173,7 +173,7 @@ with open('./templates/Makefile/templateMakefile.txt') as templateMakefile:
 # prima scrivo tutto il basefile
 with open ('./templates/MakefileDeps/templateBaseMakefileDeps.txt') as templateBaseMakefile:
     template = Template(templateBaseMakefile.read())
-    with open("Makefile.deps", "w") as makefile:
+    with open("../work/Makefile.deps", "w") as makefile:
         makefile.write(template.render())
     templateBaseMakefile.close()
 makefile.close()
@@ -182,7 +182,7 @@ with open('./templates/MakefileDeps/templateMakefileSensor.txt') as templateConf
     template = Template(templateConfigSensor.read())
     for sensor in activeSensors:
         sensorName = sensor["name"]
-        with open("Makefile.deps", 'a') as configH: 
+        with open("../work/Makefile.deps", 'a') as configH: 
             configH.write(template.render(sensorName=sensorName))
         configH.close()
 templateConfigSensor.close()
@@ -192,7 +192,7 @@ with open('./templates/MakefileDeps/templateMakefileConverterSensor.txt') as tem
     converterName = 0
     for sensor in activeSensors:
         converterName += 1
-        with open("Makefile.deps", 'a') as configH:
+        with open("../work/Makefile.deps", 'a') as configH:
             configH.write(template.render(converterName=converterName))
         configH.close()
 templateConfigSensor.close()
@@ -205,7 +205,7 @@ with open('./templates/MakefileDeps/templateMakefileMain.txt') as templateMainCo
         sensorID += 1
         sensorNames.append(sensorID) 
         print(sensorNames)
-    with open("Makefile.deps", 'a') as configH:
+    with open("../work/Makefile.deps", 'a') as configH:
         configH.write(template.render(activeSensors=sensorNames))
     configH.close()
 templateMainConfig.close()
