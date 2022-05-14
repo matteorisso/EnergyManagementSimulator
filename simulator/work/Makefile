@@ -13,11 +13,11 @@ CFLAGS = -c -g -Wno-deprecated
 MODULE = run
 SRCS =  ../src/battery_voc.cpp ../src/battery.cpp\
 	../src/battery_char.cpp ../src/battery_fre.cpp \
-	../src/sensor1.cpp ../src/sensor2.cpp \
+	../src/sensor1.cpp ../src/sensor2.cpp ../src/sensor3.cpp\
         ../src/pv_panel.cpp\
 	../src/mcu.cpp ../src/rf.cpp \
 	../src/cti.cpp \
-	../src/converter.cpp ../src/converter1.cpp ../src/converter2.cpp \
+	../src/converter.cpp ../src/converter1.cpp ../src/converter2.cpp ../src/converter3.cpp\
 	../src/converter_mcu.cpp ../src/converter_rf.cpp \
         ../src/converter_pv.cpp \
 	../src/main.cpp
