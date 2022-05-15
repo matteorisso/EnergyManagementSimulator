@@ -9,7 +9,7 @@ The current version of the simulator provides:
  4) possibility to set the Pidle of any device to a value greater than 0; <br />
  5) possibility to change the schedule of the activation of the sensors (sequential or parallel); <br />
  6) estimated Ps, with mock measures taken from an input file. <br />
- 7) possibility to insert a variable number of sensors (<span style="color: green"> NEW! </span>).
+ 7) possibility to insert a variable number of sensors - ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`.
 
 ## Usage Info
 
