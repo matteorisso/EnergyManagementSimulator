@@ -1,3 +1,5 @@
 Ad ora il processore fa solo passaggi da S1 <-> IDLE, S2 <-> IDLE, ...
 
 C'è qualche problema. Vedi rf.cpp
+
+In pratica in rf.cpp devo settare gli if else in base alle threshold del MCU
