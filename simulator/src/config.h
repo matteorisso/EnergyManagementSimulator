@@ -45,11 +45,17 @@
 #define MCU_low_speed_TIME_ON 30
 #define MCU_low_speed_THRESHOLD 0
 
+// params from MCU useful for RF
+
+#define RF_ACT_TIME1 47
+
+#define RF_ACT_TIME2 52
+
+#define RF_ACT_TIME3 57
+
 // params for RF
 #define RF_P1 2
 #define RF_P2 1.2
 #define RF_T1 10
 #define RF_T2 20
 #define RF_IDLE 0.01
-#define RF_ACT_TIME1 1
-#define RF_ACT_TIME2 1

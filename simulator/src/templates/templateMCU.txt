@@ -7,3 +7,7 @@
 #define MCU_{{state.name}}_TIME_ON {{state.time_on}}
 #define MCU_{{state.name}}_THRESHOLD {{state.threshold_SOC}}
 {% endfor %}
+// params from MCU useful for RF
+{% for act_time in act_times %}
+#define RF_ACT_TIME{{loop.index}} {{act_time}}
+{% endfor %}

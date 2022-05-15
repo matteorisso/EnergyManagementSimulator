@@ -61,8 +61,13 @@ with open('./templates/templateMCU.txt') as templateMCU:
     mcu_idle = mcu["mcu_idle"]
     states = mcu["states"]
     mcu_act_time = sensorsEndAt + 1
+    act_times = []
+    for state in states:
+        newVal = int(mcu_act_time) + int(state["time_on"])
+        newVal += 1;
+        act_times.append(newVal)
     with open(f'config.h', 'a') as configH:
-        configH.write(template.render(mcu_idle=mcu_idle, mcu_act_time=mcu_act_time, states=states))
+        configH.write(template.render(mcu_idle=mcu_idle, mcu_act_time=mcu_act_time, states=states, act_times=act_times))
     configH.close()
     # THERE MUST BE ONE FOR EACH STATE
     #mcuEndAt1 = int(mcu_act_time) + int(mcu_t1)

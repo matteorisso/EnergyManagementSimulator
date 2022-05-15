@@ -5,5 +5,3 @@
 #define RF_T1 {{rf_t1}}
 #define RF_T2 {{rf_t2}}
 #define RF_IDLE {{rf_idle}}
-#define RF_ACT_TIME1 {{rf_act_time1}}
-#define RF_ACT_TIME2 {{rf_act_time2}}

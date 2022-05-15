@@ -1,3 +1,3 @@
-Nel file reader python devo creare un mcu_act_time e rf_act_time per ogni stato della MCU!
-
 Ad ora il processore fa solo passaggi da S1 <-> IDLE, S2 <-> IDLE, ...
+
+C'è qualche problema. Vedi rf.cpp
