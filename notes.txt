@@ -1,0 +1,1 @@
+Nel file reader python devo creare un mcu_act_time e rf_act_time per ogni stato della MCU!
