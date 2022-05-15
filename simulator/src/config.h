@@ -30,12 +30,20 @@
 #define sensor4_ACT_TIME 12
 
 // params for MCU
-#define MCU_P1 2.2
-#define MCU_P2 1.4
-#define MCU_T1 40
-#define MCU_T2 30
 #define MCU_IDLE 0.01
 #define MCU_ACT_TIME 26
+
+#define MCU_full_speed_POWER_ON 0.7
+#define MCU_full_speed_TIME_ON 20
+#define MCU_full_speed_THRESHOLD 0.7
+
+#define MCU_medium_speed_POWER_ON 0.4
+#define MCU_medium_speed_TIME_ON 25
+#define MCU_medium_speed_THRESHOLD 0.4
+
+#define MCU_low_speed_POWER_ON 0.2
+#define MCU_low_speed_TIME_ON 30
+#define MCU_low_speed_THRESHOLD 0
 
 // params for RF
 #define RF_P1 2
@@ -43,5 +51,5 @@
 #define RF_T1 10
 #define RF_T2 20
 #define RF_IDLE 0.01
-#define RF_ACT_TIME1 67
-#define RF_ACT_TIME2 57
+#define RF_ACT_TIME1 1
+#define RF_ACT_TIME2 1

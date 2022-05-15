@@ -1,0 +1,44 @@
+#include "mcu.h"
+
+void mcu::set_attributes(){
+ P.set_timestep(SIM_STEP, sc_core::SC_SEC);
+}
+
+void mcu::initialize(){
+
+}
+
+void mcu::processing(){
+
+    tmpsoc = SOC.read();
+
+{% for state in states %}
+    {% if loop.length == 1 %}unica threshold{% endif %}
+    {% if loop.length > 1 and loop.index == 1 %}if(tmpsoc > MCU_{{state.name}}_THRESHOLD){
+            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_{{state.name}}_TIME_ON){
+                P.write(MCU_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(MCU_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}{% if loop.length > 1 and loop.index > 1 and loop.index < loop.length %}else if(tmpsoc > MCU_{{state.name}}_THRESHOLD){
+            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_{{state.name}}_TIME_ON){
+                P.write(MCU_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(MCU_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}{% if loop.length > 1 and loop.index == loop.length %}else {
+            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_{{state.name}}_TIME_ON){
+                P.write(MCU_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(MCU_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}
+{% endfor %}
+
+}

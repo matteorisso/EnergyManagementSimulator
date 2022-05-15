@@ -58,17 +58,15 @@ with open('./templates/templateConfigSensor.txt') as templateConfigSensor:
 with open('./templates/templateMCU.txt') as templateMCU:
     template = Template(templateMCU.read())
     mcu = settings["mcu"]
-    mcu_p1 = mcu["mcu_p1"]
-    mcu_p2 = mcu["mcu_p2"]
-    mcu_t1 = mcu["mcu_t1"]
-    mcu_t2 = mcu["mcu_t2"]
     mcu_idle = mcu["mcu_idle"]
+    states = mcu["states"]
     mcu_act_time = sensorsEndAt + 1
     with open(f'config.h', 'a') as configH:
-        configH.write(template.render(mcu_p1=mcu_p1, mcu_p2=mcu_p2, mcu_t1=mcu_t1, mcu_t2=mcu_t2, mcu_idle=mcu_idle, mcu_act_time=mcu_act_time))
+        configH.write(template.render(mcu_idle=mcu_idle, mcu_act_time=mcu_act_time, states=states))
     configH.close()
-    mcuEndAt1 = int(mcu_act_time) + int(mcu_t1)
-    mcuEndAt2 = int(mcu_act_time) + int(mcu_t2)
+    # THERE MUST BE ONE FOR EACH STATE
+    #mcuEndAt1 = int(mcu_act_time) + int(mcu_t1)
+    #mcuEndAt2 = int(mcu_act_time) + int(mcu_t2)
 
 # define params for RF
 with open('./templates/templateRF.txt') as templateRF:
@@ -79,11 +77,21 @@ with open('./templates/templateRF.txt') as templateRF:
     rf_t1 = rf["rf_t1"]
     rf_t2 = rf["rf_t2"]
     rf_idle = rf["rf_idle"]
-    rf_act_time1 = mcuEndAt1 + 1
-    rf_act_time2 = mcuEndAt2 + 1
+    # THERE MUST BE ONE FOR EACH STATE
+    rf_act_time1 = 1
+    rf_act_time2 = 1
     with open(f'config.h', 'a') as configH:
         configH.write(template.render(rf_p1=rf_p1, rf_p2=rf_p2, rf_t1=rf_t1, rf_t2=rf_t2, rf_idle=rf_idle, rf_act_time1=rf_act_time1, rf_act_time2=rf_act_time2))
     configH.close()
+templateRF.close()
+
+### mcu.cpp ###
+
+with open('./templates/templateMCUcpp.txt') as templateMCU:
+    template = Template(templateMCU.read())
+    with open("mcu.cpp", 'w') as w:
+        w.write(template.render(states=states))
+
 
 ### converterX.h ###
 

@@ -35,10 +35,26 @@
     }
 ],
 "mcu" : {
-    "mcu_p1": "2.2",
-    "mcu_p2": "1.4",
-    "mcu_t1": "40",
-    "mcu_t2": "30",
+    "states":[
+        {
+        "name": "full_speed",
+        "power": "0.7",
+        "time_on": "20",
+        "threshold_SOC": "0.7"
+        },
+        {
+        "name": "medium_speed",
+        "power": "0.4",
+        "time_on": "25",
+        "threshold_SOC": "0.4"
+        },
+        {
+        "name":"low_speed",
+        "power": "0.2",
+        "time_on": "30",
+        "threshold_SOC": "0"
+        }
+    ],
     "mcu_idle": "0.01"
 },
 "rf" : {

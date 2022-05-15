@@ -1,9 +1,9 @@
 
 // params for MCU
-#define MCU_P1 {{mcu_p1}}
-#define MCU_P2 {{mcu_p2}}
-#define MCU_T1 {{mcu_t1}}
-#define MCU_T2 {{mcu_t2}}
 #define MCU_IDLE {{mcu_idle}}
 #define MCU_ACT_TIME {{mcu_act_time}}
-
+{% for state in states %}
+#define MCU_{{state.name}}_POWER_ON {{state.power}}
+#define MCU_{{state.name}}_TIME_ON {{state.time_on}}
+#define MCU_{{state.name}}_THRESHOLD {{state.threshold_SOC}}
+{% endfor %}
