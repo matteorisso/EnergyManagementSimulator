@@ -54,8 +54,13 @@
 #define RF_ACT_TIME3 57
 
 // params for RF
-#define RF_P1 2
-#define RF_P2 1.2
-#define RF_T1 10
-#define RF_T2 20
+
+#define RF_4G_POWER_ON 0.7
+#define RF_4G_TIME_ON 20
+#define RF_4G_THRESHOLD 0.7
+
+#define RF_3G_POWER_ON 0.4
+#define RF_3G_TIME_ON 25
+#define RF_3G_THRESHOLD 0.4
+
 #define RF_IDLE 0.01

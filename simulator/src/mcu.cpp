@@ -14,39 +14,27 @@ void mcu::processing(){
 
 
     
-    if(tmpsoc > MCU_full_speed_THRESHOLD){
-            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_full_speed_TIME_ON){
-                P.write(MCU_full_speed_POWER_ON);
+    if(tmpsoc > MCU_4G_THRESHOLD){
+            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_4G_TIME_ON){
+                P.write(MCU_4G_POWER_ON);
                 i = (i+1) % PERIOD;
             }else{
                 P.write(MCU_IDLE);
                 i = (i+1) % PERIOD;
             }
-            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_full_speed_TIME_ON +1;
-        }
-
-    
-    else if(tmpsoc > MCU_medium_speed_THRESHOLD){
-            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_medium_speed_TIME_ON){
-                P.write(MCU_medium_speed_POWER_ON);
-                i = (i+1) % PERIOD;
-            }else{
-                P.write(MCU_IDLE);
-                i = (i+1) % PERIOD;
-            }
-            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_medium_speed_TIME_ON +1;
+            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_4G_TIME_ON +1;
         }
 
     
     else {
-            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_low_speed_TIME_ON){
-                P.write(MCU_low_speed_POWER_ON);
+            if(i >= MCU_ACT_TIME && i< MCU_ACT_TIME + MCU_3G_TIME_ON){
+                P.write(MCU_3G_POWER_ON);
                 i = (i+1) % PERIOD;
             }else{
                 P.write(MCU_IDLE);
                 i = (i+1) % PERIOD;
             }
-            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_low_speed_TIME_ON +1;
+            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_3G_TIME_ON +1;
         }
 
 

@@ -77,16 +77,10 @@ with open('./templates/templateMCU.txt') as templateMCU:
 with open('./templates/templateRF.txt') as templateRF:
     template = Template(templateRF.read())
     rf = settings["rf"]
-    rf_p1 = rf["rf_p1"]
-    rf_p2 = rf["rf_p2"]
-    rf_t1 = rf["rf_t1"]
-    rf_t2 = rf["rf_t2"]
+    states = rf["states"]
     rf_idle = rf["rf_idle"]
-    # THERE MUST BE ONE FOR EACH STATE
-    rf_act_time1 = 1
-    rf_act_time2 = 1
     with open(f'config.h', 'a') as configH:
-        configH.write(template.render(rf_p1=rf_p1, rf_p2=rf_p2, rf_t1=rf_t1, rf_t2=rf_t2, rf_idle=rf_idle, rf_act_time1=rf_act_time1, rf_act_time2=rf_act_time2))
+        configH.write(template.render(rf_idle=rf_idle, states=states))
     configH.close()
 templateRF.close()
 
@@ -96,6 +90,14 @@ with open('./templates/templateMCUcpp.txt') as templateMCU:
     template = Template(templateMCU.read())
     with open("mcu.cpp", 'w') as w:
         w.write(template.render(states=states))
+
+
+### rf.cpp ###
+
+with open('./templates/templateRFcpp.txt') as templateRF:
+    template = Template(templateRF.read())
+    with open("rf.cpp", 'w') as y:
+        y.write(template.render(states=states))
 
 
 ### converterX.h ###

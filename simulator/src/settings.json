@@ -58,10 +58,21 @@
     "mcu_idle": "0.01"
 },
 "rf" : {
-    "rf_p1": "2",
-    "rf_p2": "1.2",
-    "rf_t1": "10",
-    "rf_t2": "20",
+    "states":[
+        {
+        "name": "4G",
+        "power": "0.7",
+        "time_on": "20",
+        "threshold_SOC": "0.7"
+        },
+        {
+        "name": "3G",
+        "power": "0.4",
+        "time_on": "25",
+        "threshold_SOC": "0.4"
+        }
+    ],
     "rf_idle": "0.01"
+    }
 }
-}
+

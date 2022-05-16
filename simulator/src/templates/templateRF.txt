@@ -1,7 +1,8 @@
 
 // params for RF
-#define RF_P1 {{rf_p1}}
-#define RF_P2 {{rf_p2}}
-#define RF_T1 {{rf_t1}}
-#define RF_T2 {{rf_t2}}
+{% for state in states %}
+#define RF_{{state.name}}_POWER_ON {{state.power}}
+#define RF_{{state.name}}_TIME_ON {{state.time_on}}
+#define RF_{{state.name}}_THRESHOLD {{state.threshold_SOC}}
+{% endfor %}
 #define RF_IDLE {{rf_idle}}
