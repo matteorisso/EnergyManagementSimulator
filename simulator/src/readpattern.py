@@ -88,6 +88,7 @@ templateRF.close()
 
 with open('./templates/templateMCUcpp.txt') as templateMCU:
     template = Template(templateMCU.read())
+    states = settings["mcu"]["states"]
     with open("mcu.cpp", 'w') as w:
         w.write(template.render(states=states))
 
@@ -219,7 +220,6 @@ with open('./templates/MakefileDeps/templateMakefileMain.txt') as templateMainCo
     for sensor in activeSensors:
         sensorID += 1
         sensorNames.append(sensorID) 
-        print(sensorNames)
     with open("../work/Makefile.deps", 'a') as configH:
         configH.write(template.render(activeSensors=sensorNames))
     configH.close()
