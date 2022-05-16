@@ -33,15 +33,15 @@
 #define MCU_IDLE 0.01
 #define MCU_ACT_TIME 26
 
-#define MCU_full_speed_POWER_ON 0.7
+#define MCU_full_speed_POWER_ON 3
 #define MCU_full_speed_TIME_ON 20
 #define MCU_full_speed_THRESHOLD 0.7
 
-#define MCU_medium_speed_POWER_ON 0.4
+#define MCU_medium_speed_POWER_ON 1.5
 #define MCU_medium_speed_TIME_ON 25
 #define MCU_medium_speed_THRESHOLD 0.4
 
-#define MCU_low_speed_POWER_ON 0.2
+#define MCU_low_speed_POWER_ON 0.5
 #define MCU_low_speed_TIME_ON 30
 #define MCU_low_speed_THRESHOLD 0
 
@@ -55,12 +55,12 @@
 
 // params for RF
 
-#define RF_4G_POWER_ON 0.7
+#define RF_4G_POWER_ON 1
 #define RF_4G_TIME_ON 20
-#define RF_4G_THRESHOLD 0.7
+#define RF_4G_THRESHOLD 0.5
 
-#define RF_3G_POWER_ON 0.4
+#define RF_3G_POWER_ON 0.7
 #define RF_3G_TIME_ON 25
-#define RF_3G_THRESHOLD 0.4
+#define RF_3G_THRESHOLD 0
 
 #define RF_IDLE 0.01
