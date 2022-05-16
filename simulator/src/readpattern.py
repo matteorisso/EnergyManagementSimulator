@@ -97,6 +97,7 @@ with open('./templates/templateMCUcpp.txt') as templateMCU:
 
 with open('./templates/templateRFcpp.txt') as templateRF:
     template = Template(templateRF.read())
+    states = settings["rf"]["states"]
     with open("rf.cpp", 'w') as y:
         y.write(template.render(states=states))
 
