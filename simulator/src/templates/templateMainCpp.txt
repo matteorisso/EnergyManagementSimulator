@@ -25,6 +25,7 @@ int sc_main(int argc, char* argv[])
     {% endfor %}sca_tdf::sca_signal<double> Pmcu, Imcu;
     sca_tdf::sca_signal<double> Prf, Irf;
     sca_tdf::sca_signal<double> Ptotal, Itotal, Ppv, Ipv;
+    sca_tdf::sca_signal<int> rf_act_time_in_use;
 
 
     // instantiate modules
@@ -62,12 +63,14 @@ int sc_main(int argc, char* argv[])
     {% endfor %}
     mcu.P(Pmcu);
     mcu.SOC(SOC);
+    mcu.rf_act_time_in_use(rf_act_time_in_use);
     
     converter_mcu.in(Pmcu);
     converter_mcu.out(Imcu);
     
     rf.P(Prf);
     rf.SOC(SOC);
+    rf.rf_act_time_in_use(rf_act_time_in_use);
 
     converter_rf.in(Prf);
     converter_rf.out(Irf);

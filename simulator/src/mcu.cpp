@@ -22,6 +22,7 @@ void mcu::processing(){
                 P.write(MCU_IDLE);
                 i = (i+1) % PERIOD;
             }
+            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_full_speed_TIME_ON +1;
         }
 
     
@@ -33,6 +34,7 @@ void mcu::processing(){
                 P.write(MCU_IDLE);
                 i = (i+1) % PERIOD;
             }
+            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_medium_speed_TIME_ON +1;
         }
 
     
@@ -44,7 +46,10 @@ void mcu::processing(){
                 P.write(MCU_IDLE);
                 i = (i+1) % PERIOD;
             }
+            rf_act_time_in_use_tmp = MCU_ACT_TIME + MCU_low_speed_TIME_ON +1;
         }
 
+
+    rf_act_time_in_use.write(rf_act_time_in_use_tmp);
 
 }

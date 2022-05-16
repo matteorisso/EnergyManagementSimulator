@@ -14,10 +14,10 @@ void rf::processing(){
         // this module has a high power state and a low power state. If the SOC of the battery is below 50%, then the RF enters the low power state.
 
 	tmpsoc = SOC.read();
-
+    rf_act_time_in_use_tmp = rf_act_time_in_use.read();
 
 	if(tmpsoc>0.5){							// @todo: rendilo parametrizzabile
-	      if(i >= RF_ACT_TIME1 && i < RF_ACT_TIME1 + RF_T1){
+	      if(i >= rf_act_time_in_use_tmp && i < rf_act_time_in_use_tmp + RF_T1){
 	          P.write(RF_P1);
 	          i = (i+1) % PERIOD;
 	      }else{
@@ -25,7 +25,7 @@ void rf::processing(){
 	          i = (i+1) % PERIOD;
 	      }
 	    }else{
-	      if(i >= RF_ACT_TIME2 && i < RF_ACT_TIME2 + RF_T2){
+	      if(i >= rf_act_time_in_use_tmp && i < rf_act_time_in_use_tmp + RF_T2){
 	          P.write(RF_P2);
 	          i = (i+1) % PERIOD;
 	      }else{
