@@ -9,7 +9,8 @@ The current version of the simulator provides:
  4) possibility to set the Pidle of any device to a value greater than 0; <br />
  5) possibility to change the schedule of the activation of the sensors (sequential or parallel); <br />
  6) estimated Ps, with mock measures taken from an input file. <br />
- 7) possibility to insert a variable number of sensors (NEW!).
+ 7) possibility to insert a variable number of sensors (NEW!); <br />
+ 8) possibility to insert a variable number of MCU and RF states (NEW!).
 
 ## Usage Info
 
@@ -21,6 +22,7 @@ Once you modify the settings.json you can move two levels of folders upwards wit
 2) compile the system; <br />
 3) run the simulation; <br />
 4) generate a Matlab file containing traces of the signals that you wish to plot.
+
 ## Latest Update
 
 Updated on 15/05/2022.
