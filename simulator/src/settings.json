@@ -3,7 +3,7 @@
 "vref_cti" : 3.5,
 "soc_init" : 0.8,
 "selfdisch_factor" : 0.00001,
-"period" : 100, 
+"period" : 100,  
 "sensors" : [
     {
         "name": "sensor1",
