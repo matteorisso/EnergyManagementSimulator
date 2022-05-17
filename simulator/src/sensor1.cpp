@@ -8,14 +8,13 @@ void sensor1::initialize(){
 
 }
 
-void sensor1::processing(){
+bool sensor1::processing(bool enable, double* data){
 
-      if(i >= sensor1_ACT_TIME && i< sensor1_ACT_TIME + sensor1_ON_TIME){
-     P.write(sensor1_ON);
-     i = (i+1) % PERIOD;
-   }else {
-     P.write(sensor1_IDLE);
-     i = (i+1) % PERIOD;
-   }
+  fakeData = 18.0;
+
+  if(enable){
+    P.write(rand()%100);
+    return true;
+  }
 
 }

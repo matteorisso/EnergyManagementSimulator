@@ -42,6 +42,8 @@ int sc_main(int argc, char* argv[])
     sca_tdf::sca_signal<double> Ptotal, Itotal, Ppv, Ipv;
     sca_tdf::sca_signal<int> rf_act_time_in_use;
 
+    sca_tdf::sca_signal<bool> en1;
+
 
     // instantiate modules
     battery batt("battery");
@@ -78,6 +80,7 @@ int sc_main(int argc, char* argv[])
     conv_pv.out(Ipv);
     
     sensor1.P(Psensor1);
+    sensor1.en(en1);
 
     converter1.in(Psensor1);
     converter1.out(Isensor1);

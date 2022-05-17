@@ -8,12 +8,14 @@ SCA_TDF_MODULE(sensor1) {
 sca_tdf::sca_out<double> P;
 int i;
 
-SCA_CTOR(sensor1): P("P"), i(0){}
+
+
+SCA_CTOR(sensor1): P("P"), en("en"), i(0){}
 
 void set_attributes();
 
 void initialize();
 
-void processing();
+bool processing(bool enable, double* data);
 
 };
