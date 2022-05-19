@@ -6,11 +6,6 @@ void mcu::set_attributes(){
 }
 
 void mcu::initialize(){
-    sensor1 sensor1("sensor1");
-
-    sensor1.en(enable1);
-    sensor1.measure(measure1);
-    sensor1.done(done1);
 }
 
 void mcu::processing(){
