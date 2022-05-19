@@ -3,9 +3,9 @@
 
 SCA_TDF_MODULE(mcu){
 	sca_tdf::sca_out<double> P; // Pactive Pidle
-	sca_tdf::sca_out<bool> enable1;
+	sca_tdf::sca_out<int> enable1;
 	sca_tdf::sca_in<double> measure1;
-	sca_tdf::sca_in<bool> done1;
+	sca_tdf::sca_in<int> done1;
 
 	int i;
 

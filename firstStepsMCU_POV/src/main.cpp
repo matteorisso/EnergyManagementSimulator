@@ -13,7 +13,7 @@ int sc_main(int argc, char* argv[])
     // sca_tdf::sca_signal<double> Psensor1,Isensor1; 
     // sca_tdf::sca_signal<double> Pmcu, Imcu;
 
-    sca_tdf::sca_signal<bool> enable1, done1;
+    sca_tdf::sca_signal<int> enable1, done1;
     sca_tdf::sca_signal<double> measure1;
     sca_tdf::sca_signal<double> Psensor1;
     sca_tdf::sca_signal<double> Pmcu;
@@ -31,7 +31,7 @@ int sc_main(int argc, char* argv[])
     mcu.done1(done1);
 
     sensor1.P(Psensor1);
-    sensor1.en(enable1);
+    sensor1.enable(enable1);
     sensor1.measure(measure1);
     sensor1.done(done1);
 

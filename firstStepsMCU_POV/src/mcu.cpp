@@ -12,16 +12,16 @@ void mcu::processing(){
 
 
     if(i == 0){
-        sensor1.enable.write(true);
+        enable1.write(true);
         cout << "sensor1.enable.write(true);" << endl;
     } else {
-        sensor1.enable.write(false);
+        enable1.write(false);
         cout << "sensor1.enable.write(false);" << endl;
     }
 
-    if(sensor1.done.read()){
-        P.write(sensor1.measure.read());
-        cout << "ho letto il valore " << sensor1.measure.read() << " al tempo " << i << endl;
+    if(done1.read() == 1){
+        P.write(measure1.read());
+        cout << "ho letto il valore " << measure1.read() << " al tempo " << i << endl;
     }
 
     P.write(1.0);

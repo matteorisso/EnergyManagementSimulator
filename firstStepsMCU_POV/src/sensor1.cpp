@@ -8,13 +8,19 @@ void sensor1::initialize(){
 
 }
 
-void processing(bool en, double &measure_out, bool &done_out){
+void processing(){
 
-  if(en){
-    measure_out = 18.0;
+  enable_tmp = enable.read()
+
+
+  if(enable.read() == 1){
+    measure_tmp = 18.0;
+    measure.write(measure_tmp);
     //wait(20, sc_core::SC_SEC);
-    P.write(2.0);
-    done_out = true;
+    // P.write(2.0);
+    P.write(1);
+    done_tmp = 1;
+    done.write(done_tmp);
   }
 
 }
