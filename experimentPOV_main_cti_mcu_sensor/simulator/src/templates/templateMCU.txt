@@ -1,0 +1,13 @@
+
+// params for MCU
+#define MCU_IDLE {{mcu_idle}}
+#define MCU_ACT_TIME {{mcu_act_time}}
+{% for state in states %}
+#define MCU_{{state.name}}_POWER_ON {{state.power}}
+#define MCU_{{state.name}}_TIME_ON {{state.time_on}}
+#define MCU_{{state.name}}_THRESHOLD {{state.threshold_SOC}}
+{% endfor %}
+// params from MCU useful for RF
+{% for act_time in act_times %}
+#define RF_ACT_TIME{{loop.index}} {{act_time}}
+{% endfor %}

@@ -1,0 +1,7 @@
+
+// params for sensor {{sensorName}}
+#define {{sensorName}}_ON {{onPower}}
+#define {{sensorName}}_ON_TIME {{onTime}}
+#define {{sensorName}}_IDLE {{offPower}}
+#define {{sensorName}}_ACT_TIME {{actTime}}
+

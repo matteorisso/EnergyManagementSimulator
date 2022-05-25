@@ -1,0 +1,45 @@
+#include "rf.h"
+
+void rf::set_attributes(){
+ P.set_timestep(SIM_STEP, sc_core::SC_SEC);
+}
+
+void rf::initialize(){
+
+}
+
+void rf::processing(){
+
+    tmpsoc = SOC.read();
+    rf_act_time_in_use_tmp = rf_act_time_in_use.read();
+
+{% for state in states %}
+    {% if loop.length == 1 %}unica threshold{% endif %}
+    {% if loop.length > 1 and loop.index == 1 %}if(tmpsoc > RF_{{state.name}}_THRESHOLD){
+            if(i >= rf_act_time_in_use_tmp && i< rf_act_time_in_use_tmp + RF_{{state.name}}_TIME_ON){
+                P.write(RF_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(RF_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}{% if loop.length > 1 and loop.index > 1 and loop.index < loop.length %}else if(tmpsoc > RF_{{state.name}}_THRESHOLD){
+            if(i >= rf_act_time_in_use_tmp && i< rf_act_time_in_use_tmp + RF_{{state.name}}_TIME_ON){
+                P.write(RF_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(RF_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}{% if loop.length > 1 and loop.index == loop.length %}else {
+            if(i >= rf_act_time_in_use_tmp && i< rf_act_time_in_use_tmp + RF_{{state.name}}_TIME_ON){
+                P.write(RF_{{state.name}}_POWER_ON);
+                i = (i+1) % PERIOD;
+            }else{
+                P.write(RF_IDLE);
+                i = (i+1) % PERIOD;
+            }
+        }{% endif %}
+{% endfor %}
+
+}
