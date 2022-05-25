@@ -1795,5 +1795,5 @@ cti.o: ../src/cti.cpp /usr/include/stdc-predef.h ../src/cti.h \
  /home/anto/PowerSim-MultiSensor-Example/systemc-ams-2.3/src/scams/analysis/ac/sca_ac_noise_start.h \
  ../src/config.h \
  ../src/mcu.h \
+ ../src/cti.h \
  ../src/sensor1.h \
- ../src/cti.h

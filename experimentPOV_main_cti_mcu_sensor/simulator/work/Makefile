@@ -11,7 +11,7 @@ OTHER = -Wall -O3
 CFLAGS = -c -g -Wno-deprecated 
 
 MODULE = run
-SRCS =  ../src/sensor1.cpp ../src/mcu.cpp ../src/main.cpp ../cti.cpp ../src/config.h
+SRCS =  ../src/sensor1.cpp ../src/mcu.cpp ../src/main.cpp ../src/cti.cpp ../src/config.h
 
 OBJS = $(SRCS:../src/%.cpp=%.o)
 
